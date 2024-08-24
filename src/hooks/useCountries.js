@@ -4,6 +4,8 @@ const useCountries = () => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchedCountries = searchQuery === '' ? countries : countries.filter((country) => country.name.official.toLowerCase().includes(searchQuery));
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -24,7 +26,7 @@ const useCountries = () => {
     fetchCountries();
   }, []);
 
-  return { countries, isLoading, error };
+  return { isLoading, error, setSearchQuery, searchedCountries };
 };
 
 export default useCountries;
