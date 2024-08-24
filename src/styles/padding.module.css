@@ -1,0 +1,21 @@
+.headerPadding {
+  padding: 1.5rem 1rem 1.5rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .headerPadding {
+    padding: 1.5rem 1.8rem 1.5rem 1.8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .headerPadding {
+    padding: 1.8rem 2rem 1.8rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .headerPadding {
+    padding: 2.2rem 2.3rem 2.2rem 2.3rem;
+  }
+}
