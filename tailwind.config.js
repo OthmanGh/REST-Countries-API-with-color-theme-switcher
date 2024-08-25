@@ -27,7 +27,7 @@ export default {
       },
 
       screens: {
-        xs: '280px', // Extra small devices (phones)
+        xs: '320px', // Extra small devices (phones)
         sm: '640px', // Small devices (tablets)
         md: '768px', // Medium devices (small laptops)
         lg: '1024px', // Large devices (desktops)
