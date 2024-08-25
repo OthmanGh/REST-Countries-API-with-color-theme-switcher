@@ -4,19 +4,21 @@ import SelectByRegion from '../components/SelectByRegion';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import useCountries from '../hooks/useCountries';
+import CountriesList from '../ui/CountriesList';
 
 const Home = () => {
-  const { countries, isLoading, error } = useCountries();
+  const { isLoading, error, searchedCountries, setSearchQuery } = useCountries();
+
   if (error) return <Error message={error} />;
 
   return (
-    <main className={` ${styles.headerPadding} relative flex h-screen flex-col gap-14 dark:bg-neutral-very-dark-blue-bg`}>
+    <main className={` ${styles.headerPadding} flex h-full flex-col gap-14`}>
       <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <SearchField />
+        <SearchField onSearchQuery={setSearchQuery} />
         <SelectByRegion />
       </div>
 
-      {isLoading ? <Loader /> : ''}
+      <div>{isLoading ? <Loader /> : <CountriesList countries={searchedCountries} />}</div>
     </main>
   );
 };
