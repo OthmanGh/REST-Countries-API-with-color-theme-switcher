@@ -7,7 +7,7 @@ import useCountries from '../hooks/useCountries';
 import CountriesList from '../ui/CountriesList';
 
 const Home = () => {
-  const { isLoading, error, searchedCountries, setSearchQuery } = useCountries();
+  const { isLoading, error, searchedCountries, setSearchQuery, setSelectedRegion } = useCountries();
 
   if (error) return <Error message={error} />;
 
@@ -15,7 +15,7 @@ const Home = () => {
     <main className={` ${styles.headerPadding} flex h-full flex-col gap-14`}>
       <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <SearchField onSearchQuery={setSearchQuery} />
-        <SelectByRegion />
+        <SelectByRegion onSelectedRegion={setSelectedRegion} />
       </div>
 
       <div>{isLoading ? <Loader /> : <CountriesList countries={searchedCountries} />}</div>
