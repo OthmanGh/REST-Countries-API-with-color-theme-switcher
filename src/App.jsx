@@ -1,13 +1,19 @@
 import React from 'react';
-import Header from './components/Header';
 import Home from './pages/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AppLayout from './ui/AppLayout';
+import CountryDetail from './pages/CountryDetails';
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-neutral-very-light-gray-bg dark:bg-neutral-very-dark-blue-bg">
-      <Header />
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route index element={<Home />} />
+          <Route path="country" element={<CountryDetail />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 
