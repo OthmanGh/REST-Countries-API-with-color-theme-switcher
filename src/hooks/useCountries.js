@@ -5,14 +5,17 @@ const useCountries = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('');
   const searchedCountries = searchQuery === '' ? countries : countries.filter((country) => country.name.official.toLowerCase().includes(searchQuery));
 
   useEffect(() => {
     const fetchCountries = async () => {
       setIsLoading(true);
 
+      const url = selectedRegion ? `https://restcountries.com/v3.1/region/${selectedRegion}` : 'https://restcountries.com/v3.1/all';
+
       try {
-        const res = await fetch('https://restcountries.com/v3.1/all');
+        const res = await fetch(url);
         if (!res.ok) throw new Error('Failed to fetch countries');
         const data = await res.json();
         setCountries(data);
@@ -24,9 +27,9 @@ const useCountries = () => {
     };
 
     fetchCountries();
-  }, []);
+  }, [selectedRegion]);
 
-  return { isLoading, error, setSearchQuery, searchedCountries };
+  return { isLoading, error, setSearchQuery, searchedCountries, setSelectedRegion };
 };
 
 export default useCountries;
