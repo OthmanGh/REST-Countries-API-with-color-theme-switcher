@@ -5,7 +5,7 @@ const SearchByCountry = ({ onSearchQuery }) => {
     <input
       type="text"
       placeholder="Search for a country..."
-      onChange={(e) => onSearchQuery(e.target.value)}
+      onChange={(e) => onSearchQuery(e.target.value.toLowerCase())}
       className="w-full rounded-md bg-inherit px-[70px] outline-none placeholder:text-sm xs:h-12 sm:h-14"
     />
   );
