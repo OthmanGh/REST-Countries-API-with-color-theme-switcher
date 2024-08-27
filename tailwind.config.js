@@ -1,8 +1,9 @@
 /* eslint-disable import/no-anonymous-default-export */
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-
   theme: {
     extend: {
       colors: {
@@ -13,20 +14,17 @@ export default {
           'very-dark-blue-text': 'hsl(200, 15%, 8%)', // Light Mode Text
           'dark-gray-input': 'hsl(0, 0%, 65%)', // Light Mode Input
           'very-light-gray-bg': 'hsl(0, 0%, 98%)', // Light Mode Background
-          'white-text-elements': 'hsl(0, 0%, 100%)', // Dark Mode Text & L
+          'white-text-elements': 'hsl(0, 0%, 100%)', // Dark Mode Text & Light Mode Elements
         },
       },
-
       fontFamily: {
         sans: ['Nunito Sans', 'sans-serif'],
       },
-
       fontWeight: {
         light: 300,
         semibold: 600,
         bold: 800,
       },
-
       screens: {
         xs: '320px', // Extra small devices (phones)
         sm: '640px', // Small devices (tablets)

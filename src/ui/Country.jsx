@@ -12,11 +12,11 @@ const Country = ({ country }) => {
 
   return (
     <div
-      className="flex w-full cursor-pointer flex-col gap-4 overflow-hidden rounded-md bg-neutral-very-light-gray-bg  drop-shadow-2xl transition-all duration-500 xs:hover:scale-95 sm:hover:scale-105 dark:bg-neutral-dark-blue-elements dark:text-neutral-white-text-elements"
+      className="flex w-full cursor-pointer flex-col gap-4 overflow-hidden rounded-md bg-neutral-very-light-gray-bg  drop-shadow-2xl transition-all duration-500 dark:bg-neutral-dark-blue-elements dark:text-neutral-white-text-elements xs:hover:scale-95 sm:hover:scale-105"
       onClick={() => handleClick(country.name.common)}
     >
       <Tooltip placement="top" title="click to explore country details">
-        <img src={country.flags.png} alt={`${country.name.official} flag`} className="o h-[160px] w-full object-cover" />
+        <img src={country.flags.png} alt={`${country.name.official} flag`} className="o h-[12rem] w-full" />
 
         <div className="px-6 py-3 text-sm">
           <h2 className="mb-4 text-lg font-bold">{country.name.common}</h2>

@@ -1,24 +1,22 @@
 import BackButton from '../components/BackButton';
 import useCountryDetails from '../hooks/useCountryDetails';
 
-// https://restcountries.com/v3.1/region/{region}
-
 const CountryDetail = () => {
   const textColor = 'dark:text-neutral-dark-gray-input';
   const flexLayout = 'flex flex-col gap-3';
   const { borderCountries, capital, flags, languages, population, region, subregion, name, tld, currencies, isLoading } = useCountryDetails();
 
   return (
-    <div className="px-6 py-10 xl:px-10 dark:text-white">
+    <div className="px-6 py-14 dark:text-white xl:px-10">
       <BackButton />
 
       <div className="flex flex-col gap-10 text-sm lg:grid lg:grid-cols-2 lg:gap-[5rem]">
-        <img src={flags.png} alt={`${name.common} flag`} className="h-72 w-full rounded-sm object-cover sm:h-96 sm:object-fill" />
+        <img src={flags.png} alt={`${name.common} flag`} className="h-72 w-full rounded-md object-cover sm:h-96 sm:w-[80%] sm:object-fill" />
 
-        <div className="flex flex-col lg:p-10">
+        <div className="flex flex-col p-7">
           <h2 className="mb-6 text-2xl font-bold">{name.common}</h2>
 
-          <div className="mb-10 gap-10 lg:flex lg:items-start lg:justify-between">
+          <div className="mb-10 justify-between lg:flex lg:items-start lg:justify-start">
             <div className={`${flexLayout} mb-10 lg:mb-0`}>
               <p>
                 Native Name: <span className={textColor}>Native Name</span>
@@ -38,7 +36,7 @@ const CountryDetail = () => {
               </p>
             </div>
 
-            <div className={`${flexLayout} lg:mb-0`}>
+            <div className={`${flexLayout} lg:mb-0 lg:ml-32`}>
               <p>
                 Top Level Domain: <span className={textColor}>{tld}</span>
               </p>
