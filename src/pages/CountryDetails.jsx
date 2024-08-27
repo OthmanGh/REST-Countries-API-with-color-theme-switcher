@@ -1,13 +1,15 @@
 import BackButton from '../components/BackButton';
 import useCountryDetails from '../hooks/useCountryDetails';
 
+// https://restcountries.com/v3.1/region/{region}
+
 const CountryDetail = () => {
   const textColor = 'dark:text-neutral-dark-gray-input';
   const flexLayout = 'flex flex-col gap-3';
-  const { borderCountries, capital, flags, languages, population, region, subregion, name, tld, currencies } = useCountryDetails();
+  const { borderCountries, capital, flags, languages, population, region, subregion, name, tld, currencies, isLoading } = useCountryDetails();
 
   return (
-    <div className="px-6 py-10 xl:px-20 dark:text-white">
+    <div className="px-6 py-10 xl:px-10 dark:text-white">
       <BackButton />
 
       <div className="flex flex-col gap-10 text-sm lg:grid lg:grid-cols-2 lg:gap-[5rem]">
@@ -64,14 +66,20 @@ const CountryDetail = () => {
           </div>
 
           <div>
-            Border Countries:
-            <div className="mt-3 flex flex-wrap gap-4  dark:text-neutral-dark-gray-input">
-              {borderCountries.map((country) => (
-                <span className="shadow-[hsl(200, 15%, 8%)] rounded-sm px-3 py-[4px] shadow-md dark:bg-neutral-dark-blue-elements" key={country}>
-                  {country}
-                </span>
-              ))}
-            </div>
+            <span>Border Countries:</span>
+            {isLoading ? (
+              <span className="text-neutral-dark-gray-input"> Loading...</span>
+            ) : borderCountries.length === 0 ? (
+              <span className="text-neutral-dark-gray-input"> No Border Countries</span>
+            ) : (
+              <div className="mt-3 flex flex-wrap gap-4 dark:text-neutral-dark-gray-input">
+                {borderCountries.map((country) => (
+                  <span key={country} className="rounded-sm px-3 py-1 shadow-md dark:bg-neutral-dark-blue-elements">
+                    {country}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
