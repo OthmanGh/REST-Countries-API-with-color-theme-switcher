@@ -12,7 +12,7 @@ const Country = ({ country }) => {
 
   return (
     <div
-      className="flex w-full cursor-pointer flex-col gap-4 overflow-hidden rounded-md bg-neutral-very-light-gray-bg  drop-shadow-2xl transition-all duration-500 dark:bg-neutral-dark-blue-elements dark:text-neutral-white-text-elements xs:hover:scale-95 sm:hover:scale-105"
+      className="flex w-full cursor-pointer flex-col gap-4 overflow-hidden rounded-md bg-neutral-very-light-gray-bg drop-shadow-2xl transition-all duration-500 dark:bg-neutral-dark-blue-elements dark:text-neutral-white-text-elements xs:hover:scale-95 sm:hover:scale-105"
       onClick={() => handleClick(country.name.common)}
     >
       <Tooltip placement="top" title="click to explore country details">
