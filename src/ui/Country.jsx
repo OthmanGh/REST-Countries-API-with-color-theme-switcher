@@ -5,7 +5,7 @@ import { formatPopulationNumber } from '../utils/helpers';
 
 const Country = ({ country }) => {
   const navigate = useNavigate();
-  const textColor = 'dark:text-neutral-300';
+  const textColor = 'dark:text-neutral-300 font-light';
 
   const handleClick = (countryName) => {
     navigate(`/country/${countryName}`, { state: country });
@@ -23,14 +23,14 @@ const Country = ({ country }) => {
           <h2 className="mb-4 text-lg font-bold">{country.name.common}</h2>
 
           <div className="mb-3 flex flex-col gap-2">
-            <p>
+            <p className="font-semibold">
               Population: <span className={textColor}>{formatPopulationNumber(country.population)}</span>
             </p>
 
-            <p>
+            <p className="font-semibold">
               Region: <span className={textColor}>{country.region}</span>
             </p>
-            <p>
+            <p className="font-semibold">
               Capital: <span className={textColor}>{country.capital}</span>
             </p>
           </div>
