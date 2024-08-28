@@ -14,7 +14,7 @@ const CountryDetail = () => {
       <div className="flex flex-col gap-10 text-sm lg:grid lg:grid-cols-2 lg:gap-[5rem]">
         <img src={flags.png} alt={`${name.common} flag`} className="h-72 w-full rounded-md object-cover shadow-lg sm:h-96 sm:w-[80%] sm:object-fill" />
 
-        <div className="flex flex-col p-7">
+        <div className="flex flex-col lg:p-7">
           <h2 className="mb-6 text-2xl font-bold">{name.common}</h2>
 
           <div className="mb-10 justify-between lg:flex lg:items-start lg:justify-start">
