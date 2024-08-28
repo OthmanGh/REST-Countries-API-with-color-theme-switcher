@@ -19,7 +19,7 @@ const CountryDetail = () => {
           <div className="mb-10 justify-between lg:flex lg:items-start lg:justify-start">
             <div className={`${flexLayout} mb-10 lg:mb-0`}>
               <p>
-                Native Name: <span className={textColor}>Native Name</span>
+                Official: <span className={textColor}>{name.official}</span>
               </p>
               <p>
                 Population: <span className={textColor}>{population}</span>
