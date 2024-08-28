@@ -7,7 +7,7 @@ const BackButton = () => {
 
   return (
     <button
-      className="duration-400 shadow-[hsl(200, 15%, 8%)] mb-16 flex h-10 w-28 items-center justify-center gap-1 rounded-sm bg-neutral-very-light-gray-bg font-light shadow-xl transition-all dark:bg-neutral-dark-blue-elements hover:dark:bg-neutral-dark-blue-elements-hover"
+      className="duration-400 shadow-[hsl(200, 15%, 8%)] mb-16 flex h-10 w-28 items-center justify-center gap-1 rounded-sm bg-neutral-very-light-gray-bg font-light shadow-xl transition-all hover:bg-gray-100 dark:bg-neutral-dark-blue-elements hover:dark:bg-neutral-dark-blue-elements-hover"
       onClick={() => navigate(-1)}
     >
       <IoIosArrowRoundBack className="text-2xl" /> Back
