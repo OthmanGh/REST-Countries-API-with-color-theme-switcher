@@ -1,6 +1,7 @@
 import { Tooltip } from '@mui/material';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { formatPopulationNumber } from '../utils/helpers';
 
 const Country = ({ country }) => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Country = ({ country }) => {
 
           <div className="mb-3 flex flex-col gap-2">
             <p>
-              Population: <span className={textColor}>{country.population}</span>
+              Population: <span className={textColor}>{formatPopulationNumber(country.population)}</span>
             </p>
 
             <p>

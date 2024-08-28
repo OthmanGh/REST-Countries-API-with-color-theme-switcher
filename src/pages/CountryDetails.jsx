@@ -1,5 +1,6 @@
 import BackButton from '../components/BackButton';
 import useCountryDetails from '../hooks/useCountryDetails';
+import { formatPopulationNumber } from '../utils/helpers';
 
 const CountryDetail = () => {
   const textColor = 'dark:text-neutral-dark-gray-input';
@@ -22,7 +23,7 @@ const CountryDetail = () => {
                 Official: <span className={textColor}>{name.official}</span>
               </p>
               <p>
-                Population: <span className={textColor}>{population}</span>
+                Population: <span className={textColor}>{formatPopulationNumber(population)}</span>
               </p>
               <p>
                 Region: <span className={textColor}>{region}</span>
